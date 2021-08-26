@@ -38,8 +38,8 @@ def do_deploy(archive_path):
         return False
 
     movinf_file = run(
-        """mv /data/web_static/releases/{}/web_static/*
-        /data/web_static/releases/{}""".format(
+        "mv /data/web_static/releases/{}/web_static/*\
+         /data/web_static/releases/{}".format(
             file_out_ext[0], file_out_ext[0]))
     if movinf_file.failed:
         return False
