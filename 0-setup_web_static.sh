@@ -38,12 +38,7 @@ then
     sudo mkdir /data/web_static/releases/test/
 fi
 
-# creating symbolic link
-sudo ln -sf /data/web_static/releases/test/ /data/web_static/current
 
-# give ownership to folder data
-sudo chown -R ubuntu:ubuntu /data/
-sudo chmod -R 755 /data/
 
 # creating the html file
 touch /data/web_static/releases/test/index.html
@@ -55,6 +50,12 @@ echo "<html>
   </body>
 </html>" > /data/web_static/releases/test/index.html
 
+# creating symbolic link
+sudo ln -sf /data/web_static/releases/test/ /data/web_static/current
+
+# give ownership to folder data
+sudo chown -R ubuntu:ubuntu /data/
+sudo chmod -R 755 /data/
 
 #adding the location
 sudo sed -i "/# pass the PHP/i location /hbnb_static {\n\talias /data/web_static/current/;\n}" /etc/nginx/sites-enabled/default
