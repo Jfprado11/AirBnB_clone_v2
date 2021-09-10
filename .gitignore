@@ -3,3 +3,4 @@ main*.py
 __pycache__/
 W3C-Validator/
 requirements.txt
+env/
