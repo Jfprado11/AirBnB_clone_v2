@@ -22,6 +22,7 @@ def hbhb():
 
 @app.route("/c/<text>", strict_slashes=False)
 def c_text(text):
+    """usign a varible in teh url"""
     value = text.replace("_", " ")
     return "C {}".format(escape(value))
 
