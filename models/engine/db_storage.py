@@ -2,7 +2,6 @@
 """module contais the class dbsotrage
 for the creation of the engine with ORM
 """
-from sqlalchemy.orm.session import Session
 from sqlalchemy.orm import sessionmaker
 from models.base_model import Base
 from sqlalchemy.orm import scoped_session
@@ -73,4 +72,4 @@ class DBStorage:
 
     def close(self):
         """removing the session"""
-        self.__session.remove()
+        self.__session.close()
