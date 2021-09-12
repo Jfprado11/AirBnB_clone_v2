@@ -16,9 +16,9 @@
             <H3>Cities:</H3>
             <UL>
                 {% for city in cities.values()|sort(attribute="name") %}
-                    {% if city.state_id == state.id %}
+                    {%- if city.state_id == state.id +%}
                         <LI>{{ city.id }}: <B>{{ city.name }}</B></LI>
-                    {% endif %}
+                    {% endif -%}
                 {% endfor %}
             </UL>
         {% else %}
