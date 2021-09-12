@@ -26,8 +26,7 @@ def states_id(id):
     if any(id == value[6:] for value in states.keys()):
         key = "State." + id
         state = states[key]
-        cities = storage.all(City)
-        return render_template("9-states.html", state=state, cities=cities)
+        return render_template("9-states.html", state=state)
     else:
         return render_template("9-states.html")
 
