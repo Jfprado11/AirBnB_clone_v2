@@ -13,17 +13,13 @@ app = Flask(__name__)
 
 
 @app.route("/states", strict_slashes=False)
-def states():
-    """show the states"""
-    states = storage.all(State)
-    return render_template("9-states.html", states=states)
-
-
 @app.route("/states/<id>", strict_slashes=False)
-def states_id(id):
+def states_id(id=None):
     """show the specific state with its cities"""
     states = storage.all(State)
-    if any(id == value[6:] for value in states.keys()):
+    if id is None:
+        return render_template("9-states.html", states=states)
+    elif any(id == value[6:] for value in states.keys()):
         key = "State." + id
         state = states[key]
         cities = storage.all(City)
