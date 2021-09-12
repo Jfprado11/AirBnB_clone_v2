@@ -12,11 +12,11 @@ def states_list():
     """showing all the states of the database"""
     from models.state import State
     states = storage.all(State)
-    render_template("7-states_list.html", states=states)
+    return render_template("7-states_list.html", states=states)
 
 
 @app.teardown_appcontext
-def closing():
+def closing(exception):
     """to close the conection"""
     storage.close()
 
